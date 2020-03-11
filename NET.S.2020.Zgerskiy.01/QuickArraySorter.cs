@@ -7,6 +7,17 @@ namespace NET.S._2020.Zgerskiy._01
     public static class QuickArraySorter
     {
 
+        /// <summary>
+        /// Swaps two integer values
+        /// </summary>
+        /// <param name="first">First integer value</param>
+        /// <param name="second">Second integer value</param>
+        static void SwapValues(ref int first, ref int second)
+        {
+            int temp = first;
+            second = first;
+            second = temp;
+        }
 
         /// <summary>
         /// Searches partition index
@@ -23,16 +34,12 @@ namespace NET.S._2020.Zgerskiy._01
                 if (array[i] < array[lastIndex])
                 {
                     pivot++;
-                    int temp = array[pivot];
-                    array[pivot] = array[i];
-                    array[pivot] = temp;
+                    SwapValues(ref array[i],ref array[pivot]);
                 }
             }
 
             pivot++;
-            int temp1 = array[pivot];
-            array[pivot] = array[lastIndex];
-            array[lastIndex] = temp1;
+            SwapValues(ref array[pivot],ref array[lastIndex]);
             return pivot;
         }
 
