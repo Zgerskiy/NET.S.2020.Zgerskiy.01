@@ -15,7 +15,7 @@ namespace NET.S._2020.Zgerskiy._01
         static void SwapValues(ref int first, ref int second)
         {
             int temp = first;
-            second = first;
+            first = second;
             second = temp;
         }
 
@@ -28,7 +28,7 @@ namespace NET.S._2020.Zgerskiy._01
         /// <returns>Index of partiton</returns>
         static int GetPartitionIndex(int[] array, int startIndex, int lastIndex)
         {
-            int pivot = lastIndex - 1;
+            int pivot = startIndex - 1;
             for (int i = startIndex; i < lastIndex; i++)
             {
                 if (array[i] < array[lastIndex])
@@ -53,8 +53,15 @@ namespace NET.S._2020.Zgerskiy._01
         /// <returns></returns>
         static int[] QuickSort(int[] array, int startIndex, int lastIndex)
         {
+            if (startIndex >= lastIndex)
+                return array;
+
             int partitionIndex = GetPartitionIndex(array, startIndex, lastIndex);
-            throw new NotImplementedException();
+
+            QuickSort(array, startIndex, partitionIndex -1);
+            QuickSort(array, partitionIndex+1, array.Length-1);
+
+            return array;
         }
 
         /// <summary>

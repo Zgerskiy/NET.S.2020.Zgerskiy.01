@@ -8,6 +8,11 @@ namespace NET.S._2020.Zgerskiy._01
         {
             int[] arrayForSorting = new int[] {5,3,2,9,7 };
             QuickArraySorter.QuickSort(arrayForSorting);
+
+            foreach(int number in arrayForSorting)
+            {
+                Console.WriteLine(number);
+            }
         }
     }
 }
