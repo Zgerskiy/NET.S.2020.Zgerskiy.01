@@ -19,7 +19,7 @@ namespace NET.S._2020.Zgerskiy._01
 			TestMergeSort(testCaseNumber++, new int[] { 1, 2, 3 }, new int[] { 1, 2, 3 });
 			TestMergeSort(testCaseNumber++, new int[] { 3, 2, 1 }, new int[] { 1, 2, 3 });
 			TestMergeSort(testCaseNumber++, new int[] { 2, 2, 2 }, new int[] { 2, 2, 2 });
-			TestMergeSort(testCaseNumber++, null, null);
+			TestMergeSort(testCaseNumber++, new int[] { }, new int[] { });
 
 			Console.WriteLine("\tTesting quick sort:");
 
@@ -28,7 +28,7 @@ namespace NET.S._2020.Zgerskiy._01
 			TestQuickSort(testCaseNumber++, new int[] { 1, 2, 3 }, new int[] { 1, 2, 3 });
 			TestQuickSort(testCaseNumber++, new int[] { 3, 2, 1 }, new int[] { 1, 2, 3 });
 			TestQuickSort(testCaseNumber++, new int[] { 2, 2, 2 }, new int[] { 2, 2, 2 });
-			TestMergeSort(testCaseNumber++, null, null);
+			TestMergeSort(testCaseNumber++, new int[] { }, new int[] { });
 
 			if (correctTestCaseAmount == testCaseNumber - 1)
 			{
@@ -84,6 +84,7 @@ namespace NET.S._2020.Zgerskiy._01
 			}
 		}
 
+		
 		private static string correctCaseTemplate = "Case #{0} is correct.";
 		private static string incorrectCaseTemplate = "Case #{0} is incorrect";
 		private static int correctTestCaseAmount = 0;

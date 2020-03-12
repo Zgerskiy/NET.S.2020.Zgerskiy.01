@@ -88,6 +88,8 @@ namespace NET.S._2020.Zgerskiy._01
         /// <returns>Returns sorted array of integers</returns>
         public static int[] MergeSort(int[] array)
         {
+            if (array is null)
+                throw new ArgumentNullException();
             return MergeSort(array, 0, array.Length - 1);
         }
     }
